@@ -79,16 +79,25 @@
      </form>
 
       <div id = "createAndView">
-          <p>
-              Create and View
-            </p>
+        <button name="createProposal" type="submit"
+        class="createProposal"
+        value="Create">Create</button>
+        <button name="viewProposal" type="submit"
+        class="viewProposal"
+        value="view">View</button>
       </div>
 
       <div id = "buildProposal">
-          <p>
-              Build Proposal
-            </p>
-
+        <form id="build-proposal" class="border">
+          <fieldset>
+            <legend>Build Proposal</legend>
+            <input type="text" name="Project_title" placeholder="Project Title">
+            <textarea form="build-proposal" name="question_one" rows="5"></textarea>
+            <textarea form="build-proposal" name="question_two" rows="5"></textarea>
+            <textarea form="build-proposal" name="question_three" rows="5"></textarea>
+            <input type="submit" value="Submit Proposal">
+          </fieldset>
+        </form>
       </div>
 
       <div id = "viewProposal">
