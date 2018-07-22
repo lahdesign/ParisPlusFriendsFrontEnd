@@ -12,6 +12,103 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Paris Plus Friends</h1>
+
+      <div id = "landing">
+        <p>
+          This is the landing page
+        </p>
+
+      </div>
+
+      <div id = "info">
+          <p>
+              General info about the pop up
+            </p>
+
+      </div>
+
+      <div id = "callForProposals">
+          <p>
+              Call for Proposals
+            </p>
+      </div>
+
+      <div id = "signUp">
+        <form id="sign_Up" class="border">
+          <fieldset>
+            <legend>Create User</legend>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            <input type="submit" value="Sign up!">
+          </fieldset>
+        </form>
+
+      </div>
+
+      <div id = "signIn">
+        <form id="sign-in" class="border">
+          <fieldset>
+            <legend>Sign in!</legend>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="submit" value="Sign in!">
+          </fieldset>
+        </form>
+      </div>
+
+         <!-- Start of user info -->
+  <!-- display user info on signIn -->
+   <div id = "userInfo">
+
+    <form id="change-password" class="border">
+     <fieldset>
+       <legend>Change password</legend>
+       <input type="password" name="passwords[old]" placeholder="Old Password">
+       <input type="password" name="passwords[new]" placeholder="New Password">
+       <input type="submit" value="Change Password!">
+     </fieldset>
+   </form>
+
+   <form id="sign-out" class="border">
+       <fieldset>
+         <legend>Sign Out!</legend>
+         <input type="submit" value="Sign out!">
+       </fieldset>
+     </form>
+
+      <div id = "createAndView">
+          <p>
+              Create and View
+            </p>
+      </div>
+
+      <div id = "buildProposal">
+          <p>
+              Build Proposal
+            </p>
+
+      </div>
+
+      <div id = "viewProposal">
+          <p>
+              View Proposal
+            </p>
+      </div>
+
+      <div id = "myVotes">
+          <p>
+              My Votes
+            </p>
+
+      </div>
+
+      <div id = "allProposals">
+          <p>
+              All Proposals
+            </p>
+      </div>
+
     </body>
 </html>
