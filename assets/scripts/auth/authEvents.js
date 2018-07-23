@@ -41,14 +41,17 @@ const onSignOut = function (event) {
 }
 
 const addHandlers = () => {
-  $('#getBooksButton').on('click', onGetBooks)
-  $('#clearBooksButton').on('click', onClearBooks)
-  $('.content').on('click', onDeleteBook )
+  $('#sign-up').on('submit', onSignUp)
+  $('#sign-in').on('submit', onSignIn)
+  $('#change-password').on('submit', onchangePassword)
+  $('#sign-out').on('submit', onSignOut)
 }
 
 module.exports = {
   onSignUp,
   onSignIn,
   onchangePassword,
-  onSignOut
+  onSignOut,
+  addHandlers
+
 }

@@ -18,6 +18,7 @@ const updateProposal = function () {
     url: config.apiUrl + '/proposal/' + store.game.id,
     headers: {
       Authorization: 'Token token=' + store.user.token
+    }
 //     },
 //     --data '{
 //       "proposals": {
@@ -26,7 +27,7 @@ const updateProposal = function () {
 //         "question_two": "'"${QUESTION_TWO}"'",
 //         "question_three": "'"${QUESTION_THREE}"'"
 
-//   })
+  })
 // }
 const getProposals = function () {
   return $.ajax({

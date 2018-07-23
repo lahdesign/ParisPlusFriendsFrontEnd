@@ -1,34 +1,49 @@
 'use strict'
 
-const api = require('./api.js')
-const ui = require('./ui.js')
+const proposalApi = require('./proposalApi')
+const proposalUi = require('./ui.js')
 
-const onGetBooks = (event) => {
+const onCreateProposal
+
+const onGetProposals = (event) => {
   event.preventDefault()
-  api.getBooks()
+  proposalApi.getBooks()
     .then(ui.getBooksSuccess)
     .catch(ui.failure)
 }
 
-const onClearBooks = (event) => {
+const onClearProposal = (event) => {
   event.preventDefault()
-  ui.clearBooks()
+  proposalUi.clearBooks()
 }
-const onDeleteBook = (event) => {
+const onDeleteProposal = (event) => {
   event.preventDefault()
   //closest is handlebar syntax
   const bookId = $(event.target).closest('ul').attr('data-id')
-  api.deleteBook(bookId)
+  proposalApi.deleteBook(bookId)
   .then(() => onGetBooks(event))
   .catch(ui.failure)
 }
 
 const addHandlers = () => {
-  $('#getBooksButton').on('click', onGetBooks)
+  $('#getGames').on('submit', gameEvents.onGetGames)
   $('#clearBooksButton').on('click', onClearBooks)
   $('.content').on('click', onDeleteBook )
 }
 
+$('.newProposal').on('click', function () {
+  store.gameInstance = new Game.Game()
+  create.createGame()
+  .then(function (data) {
+    store.game = data.game
+  })
+  .catch()
+  $('#board').show()
+})
+
 module.exports = {
-  addHandlers
+  addHandlers,
+  onGetProposals,
+  onDeleteProposal,
+  onClearProposal
 }
