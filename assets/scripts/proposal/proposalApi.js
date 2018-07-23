@@ -12,24 +12,22 @@ const createProposal = function () {
   })
 }
 
-const userMoves = function (gameValues, gameOn) {
+const updateProposal = function () {
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/games/' + store.game.id,
+    url: config.apiUrl + '/proposal/' + store.game.id,
     headers: {
       Authorization: 'Token token=' + store.user.token
-    },
-    data: {
-      'game': {
-        'cell': {
-          'index': gameValues.i,
-          'value': gameValues.v
-        },
-        'over': gameOn
-      }
-    }
-  })
-}
+//     },
+//     --data '{
+//       "proposals": {
+//         "project_title": "'"${TITLE}"'",
+//         "question_one": "'"${QUESTION_ONE}"'",
+//         "question_two": "'"${QUESTION_TWO}"'",
+//         "question_three": "'"${QUESTION_THREE}"'"
+
+//   })
+// }
 const getProposals = function () {
   return $.ajax({
     url: config.apiUrl + '/games?over=true',
@@ -42,11 +40,7 @@ const getProposals = function () {
 }
 
 module.exports = {
-  userMoves,
-  getGames
-}
-
-module.exports = {
   createProposal,
+  updateProposal,
   getProposals
 }
