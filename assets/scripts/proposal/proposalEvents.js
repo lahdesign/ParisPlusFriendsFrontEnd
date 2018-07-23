@@ -1,7 +1,7 @@
 'use strict'
-
-const proposalApi = require('./proposalApi')
-const proposalUi = require('./ui.js')
+const config = require('../config')
+const proposalApi = require('../proposal/proposalApi')
+const proposalUi = require('../proposal/proposalUi')
 
 const onCreateProposal
 
@@ -14,12 +14,12 @@ const onGetProposals = (event) => {
 
 const onClearProposal = (event) => {
   event.preventDefault()
-  proposalUi.clearBooks()
+  proposalUi.clearProposal()
 }
 const onDeleteProposal = (event) => {
   event.preventDefault()
   //closest is handlebar syntax
-  const bookId = $(event.target).closest('ul').attr('data-id')
+  const proposalId = $(event.target).closest('ul').attr('data-id')
   proposalApi.deleteBook(bookId)
   .then(() => onGetBooks(event))
   .catch(ui.failure)
@@ -43,6 +43,7 @@ $('.newProposal').on('click', function () {
 
 module.exports = {
   addHandlers,
+  onCreateProposal,
   onGetProposals,
   onDeleteProposal,
   onClearProposal

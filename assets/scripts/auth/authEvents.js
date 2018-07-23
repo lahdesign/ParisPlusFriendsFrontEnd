@@ -1,6 +1,6 @@
 'use strict'
 
-const getFormFields = require('../../../../lib/get-form-fields')
+const getFormFields = require('../../../lib/get-form-fields')
 const authApi = require('./authApi')
 const authUi = require('./authUi')
 // Name your handlers, it eases debugging.
