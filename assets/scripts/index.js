@@ -1,5 +1,5 @@
 'use strict'
-const proposalEvents = require('./proposals/proposalEvents.js')
+const proposalEvents = require('./proposal/proposalEvents.js')
 const authEvents = require('./auth/authEvents.js')
 
 // use require with a reference to bundle the file and use it in this file
@@ -13,8 +13,9 @@ $(() => {
   authEvents.addHandlers()
   $('#info').hide()
   $('#callForProposals').hide()
-  $('#signUp').hide()
-  $('#signIn').hide()
+  // $('#signUp').hide()
+  // $('#signIn').hide()
+  $('#userInfo').hide()
   $('#createAndView').hide()
   $('#buildProposal').hide()
   $('#viewProposal').hide()

@@ -1,6 +1,6 @@
 'use strict'
-const config = require('../../config.js')
-const store = require('../../store')
+const config = require('../config.js')
+const store = require('../store')
 
 // const onGetGamesSuccess = function (data) {
 //   console.log(data)

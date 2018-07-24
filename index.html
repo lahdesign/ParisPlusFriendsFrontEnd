@@ -12,8 +12,10 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Paris Plus Friends</h1>
+
+
       <body background="images/paris_flyer_color_crop.jpg">
+      <img src="./images/Paris_plusFriendsLogo.png" alt="Paris Plus Friends Logo">
 
       <div id = "landing">
         <p>
@@ -36,7 +38,7 @@
       </div>
 
       <div id = "signUp">
-        <form id="sign_Up" class="border">
+        <form id="sign_up" class="border">
           <fieldset>
             <legend>Create User</legend>
             <input type="text" name="credentials[email]" placeholder="Email">
@@ -49,7 +51,7 @@
       </div>
 
       <div id = "signIn">
-        <form id="sign-in" class="border">
+        <form id="sign_in" class="border">
           <fieldset>
             <legend>Sign in!</legend>
             <input type="text" name="credentials[email]" placeholder="Email">
@@ -63,7 +65,7 @@
   <!-- display user info on signIn -->
    <div id = "userInfo">
 
-    <form id="change-password" class="border">
+    <form id="change_password" class="border">
      <fieldset>
        <legend>Change password</legend>
        <input type="password" name="passwords[old]" placeholder="Old Password">
@@ -72,7 +74,7 @@
      </fieldset>
    </form>
 
-   <form id="sign-out" class="border">
+   <form id="sign_out" class="border">
        <fieldset>
          <legend>Sign Out!</legend>
          <input type="submit" value="Sign out!">
@@ -92,13 +94,13 @@
         <form id="build-proposal" class="border">
           <fieldset>
             <legend>Build Proposal</legend>
-            <input type="text" name="Project_title" placeholder="Project Title">
+            <input type="text" name="proposal[title]" placeholder="Project Title">
             <br>
-            <textarea form="build-proposal" name="question_one" rows="5" placeholder="Question One"></textarea>
+            <textarea form="build-proposal" name="proposal[question_one]" rows="5" placeholder="Question One"></textarea>
             <br>
-            <textarea form="build-proposal" name="question_two" rows="5" placeholder="Question Two"></textarea>
+            <textarea form="build-proposal" name="proposal[question_two]" rows="5" placeholder="Question Two"></textarea>
             <br>
-            <textarea form="build-proposal" name="question_three" rows="5" placeholder="Question Three"></textarea>
+            <textarea form="build-proposal" name="proposal[question_three]" rows="5" placeholder="Question Three"></textarea>
             <br>
             <input type="submit" value="Submit Proposal">
           </fieldset>

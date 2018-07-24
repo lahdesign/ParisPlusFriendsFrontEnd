@@ -28,7 +28,7 @@ const onSignIn = function (event) {
 const onchangePassword = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  authApi.signIn(data)
+  authApi.changePassword(data)
     .then(authUi.changePasswordSuccess)
     .catch(authUi.failure)
 }
@@ -41,10 +41,10 @@ const onSignOut = function (event) {
 }
 
 const addHandlers = () => {
-  $('#sign-up').on('submit', onSignUp)
-  $('#sign-in').on('submit', onSignIn)
-  $('#change-password').on('submit', onchangePassword)
-  $('#sign-out').on('submit', onSignOut)
+  $('#sign_up').on('submit', onSignUp)
+  $('#sign_in').on('submit', onSignIn)
+  $('#change_password').on('submit', onchangePassword)
+  $('#sign_out').on('submit', onSignOut)
 }
 
 module.exports = {

@@ -1,8 +1,9 @@
 
-const store = require('../../store.js')
-const authEvents = require('./authEvents.js')
+const store = require('../store.js')
+const authEvents = require('../auth/authEvents')
 
 const onSignUpSuccess = function () {
+  debugger
   $('#userMessage').text('Signed up successfully')
   console.log('signed up successfully')
   $('#sign-up')[0].reset()

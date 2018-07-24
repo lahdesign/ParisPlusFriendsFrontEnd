@@ -1,5 +1,5 @@
 const config = require('../config')
-const store = require('../../store')
+const store = require('../store')
 
 const createProposal = function () {
   return $.ajax({
@@ -28,7 +28,8 @@ const updateProposal = function () {
 //         "question_three": "'"${QUESTION_THREE}"'"
 
   })
-// }
+}
+
 const getProposals = function () {
   return $.ajax({
     url: config.apiUrl + '/games?over=true',
