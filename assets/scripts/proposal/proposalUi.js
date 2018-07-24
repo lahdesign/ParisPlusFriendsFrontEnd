@@ -12,13 +12,13 @@ const store = require('../store')
 
 // const onUserMovesSuccess = function (data) {}
 
-// const onCreateSuccess = function (data) {
-//   $('#message').text('Example successfully created')
-//   $('#message').css('background-color', 'green')
-//   store.game = data.game
-//   console.log('onCreateSuccess ran. Data is :', data)
-//   $('#board').show()
-// }
+const onCreateProposalSuccess = function (data) {
+  $('#message').text('Example successfully created')
+  $('#message').css('background-color', 'green')
+  store.game = data.game
+  console.log('onCreateSuccess ran. Data is :', data)
+  // $('#board').show()
+}
 
 // const onCreateFailure = function (error) {
 //   $('#message').text('Error on creating example')
@@ -74,7 +74,8 @@ const store = require('../store')
 //   console.error('onUpdateFailure ran. Error is :', error)
 // }
 
-// module.exports = {
+module.exports = {
+  onCreateProposalSuccess
 //   onCreateSuccess,
 //   onCreateFailure,
 //   onIndexSuccess,
@@ -88,4 +89,4 @@ const store = require('../store')
 //   onUserMovesSuccess,
 //   onGetGamesSuccess,
 //   onGetGamesFailure
-// }
+}

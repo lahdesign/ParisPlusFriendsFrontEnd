@@ -1,14 +1,23 @@
 'use strict'
 const config = require('../config')
+const getFormFields = require('../../../lib/get-form-fields')
 const proposalApi = require('../proposal/proposalApi')
 const proposalUi = require('../proposal/proposalUi')
 
-// const onCreateProposal
+const onCreateProposal = (event) => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log('got to on create example')
+  proposalApi.createProposal()
+    .then(proposalUi.createProposalSuccess)
+    .catch(proposalUi.failure)
+}
 
 const onGetProposals = (event) => {
   event.preventDefault()
-  proposalApi.getBooks()
-    .then(proposalUi.getBooksSuccess)
+  const data = getFormFields(event.target)
+  proposalApi.getProposals()
+    .then(proposalUi.getProposalsSuccess)
     .catch(proposalUi.failure)
 }
 
@@ -20,13 +29,13 @@ const onDeleteProposal = (event) => {
   event.preventDefault()
   // closest is handlebar syntax
   const proposalId = $(event.target).closest('ul').attr('data-id')
-  proposalApi.deleteBook(bookId)
-    .then(() => onGetBooks(event))
+  proposalApi.deleteProposal(proposalId)
+    .then(() => onGetProposals(event))
     .catch(proposalUi.failure)
 }
 
 const addHandlers = () => {
-  // $('#getGames').on('submit', gameEvents.onGetGames)
+$('#build_proposal').on('submit', onCreateProposal)
   // $('#clearBooksButton').on('click', onClearBooks)
   // $('.content').on('click', onDeleteBook )
 }
@@ -43,7 +52,7 @@ const addHandlers = () => {
 
 module.exports = {
   addHandlers,
-  // onCreateProposal,
+  onCreateProposal,
   onGetProposals,
   onDeleteProposal,
   onClearProposal

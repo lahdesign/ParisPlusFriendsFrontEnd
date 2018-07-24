@@ -3,7 +3,7 @@ const store = require('../store')
 
 const createProposal = function () {
   return $.ajax({
-    url: config.apiUrl + '/games/',
+    url: config.apiUrl + '/proposal/',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
