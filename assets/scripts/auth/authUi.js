@@ -1,9 +1,9 @@
 
 const store = require('../store.js')
-const authEvents = require('../auth/authEvents')
+// const authEvents = require('../auth/authEvents')
 
 const onSignUpSuccess = function () {
-  debugger
+  // debugger
   $('#userMessage').text('Signed up successfully')
   console.log('signed up successfully')
   $('#sign-up')[0].reset()
@@ -29,7 +29,7 @@ const onSignInSuccess = function (data) {
 const onSignInFailure = function () {
   $('#sign-in-message').text('Signed in failed.')
   $('#sign-in-message').css('background-color', 'red')
-  //resetForms()
+  // resetForms()
   setTimeout(() => $('#sign-in-message').text(''), 3000)
 }
 // const resetForms = function () {
@@ -65,7 +65,7 @@ const failure = function () {
 const onSignOutSuccess = function () {
   $('#sign-out-message').text('Signed out successfully.')
   $('#sign-out-message').css('background-color', 'green')
-  resetForms()
+  // resetForms()
   $('#game-board').html('')
   setTimeout(() => $('#sign-out-message').text(''), 3000)
 }
@@ -76,8 +76,6 @@ const onSignOutSuccess = function () {
 //   setTimeout(() => $('#sign-out-message').text(''), 3000)
 //   resetForms()
 // }
-
-
 
 module.exports = {
 //   onSuccess

@@ -1,6 +1,7 @@
 'use strict'
-const config = require('../config.js')
+// const config = require('../config.js')
 const store = require('../store')
+const proposalTemplate = require('../templates/showproposals.handlebars')
 
 // const onGetGamesSuccess = function (data) {
 //   console.log(data)
@@ -16,11 +17,14 @@ const createProposalSuccess = function (data) {
   $('#message').text('Example successfully created')
   $('#message').css('background-color', 'green')
   store.proposal = data.proposal
-  debugger
   console.log('onCreateSuccess ran. Data is :', data)
-  // $('#board').show()
 }
 
+const showProposalSuccess = function (data) {
+  console.log(data)
+  const htmltemplate = proposalTemplate({proposals: data.proposals})
+  $('.content').append(htmltemplate)
+}
 // const onCreateFailure = function (error) {
 //   $('#message').text('Error on creating example')
 //   $('#message').css('background-color', 'red')
@@ -76,7 +80,8 @@ const createProposalSuccess = function (data) {
 // }
 
 module.exports = {
-  createProposalSuccess
+  createProposalSuccess,
+  showProposalSuccess
 //   onCreateSuccess,
 //   onCreateFailure,
 //   onIndexSuccess,

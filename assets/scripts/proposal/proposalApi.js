@@ -12,10 +12,13 @@ const createProposal = function (data) {
 
   })
 }
-const showProposals = function (id) {
+const showProposals = function () {
   return $.ajax({
-    url: config.apiOrigin + '/proposal/' + id,
-    method: 'GET'
+    url: config.apiUrl + '/proposals/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
