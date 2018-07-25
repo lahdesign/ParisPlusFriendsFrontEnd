@@ -25,6 +25,13 @@ const showProposalSuccess = function (data) {
   const htmltemplate = proposalTemplate({proposals: data.proposals})
   $('.content').append(htmltemplate)
 }
+
+const updateProposalSuccess = function (data) {
+  $('#message').text('Example successfully created')
+  $('#message').css('background-color', 'green')
+  store.proposal = data.proposal
+  console.log('onUpdateSuccess ran. Data is :', data)
+}
 // const onCreateFailure = function (error) {
 //   $('#message').text('Error on creating example')
 //   $('#message').css('background-color', 'red')
@@ -81,7 +88,8 @@ const showProposalSuccess = function (data) {
 
 module.exports = {
   createProposalSuccess,
-  showProposalSuccess
+  showProposalSuccess,
+  updateProposalSuccess
 //   onCreateSuccess,
 //   onCreateFailure,
 //   onIndexSuccess,

@@ -22,10 +22,9 @@ const onShowProposals = function (event) {
 const onUpdateProposal = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
-  // proposalApi.updateProposal(data)
-  //   .then(proposalUi.updateProposalSuccess)
-  //   .catch(proposalUi.failure)
+  proposalApi.updateProposal(data)
+    .then(proposalUi.updateProposalSuccess)
+    .catch(proposalUi.failure)
 }
 
 // const onGetProposals = (event) => {

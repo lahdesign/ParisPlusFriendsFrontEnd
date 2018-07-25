@@ -24,7 +24,7 @@ const showProposals = function () {
 
 const updateProposal = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/proposals/' + data.id,
+    url: config.apiUrl + '/proposals/' + data.proposal.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -32,21 +32,8 @@ const updateProposal = function (data) {
     data
   })
 }
-
-const getProposals = function () {
-  return $.ajax({
-    url: config.apiUrl + '/games?over=true',
-    method: 'GET',
-    headers: {
-      'Content-type': 'application/json',
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
-
 module.exports = {
   createProposal,
   updateProposal,
-  getProposals,
   showProposals
 }
