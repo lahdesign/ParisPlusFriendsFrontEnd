@@ -9,7 +9,7 @@ const onCreateProposal = (event) => {
   const data = getFormFields(event.target)
   console.log('got to on create example')
   console.log(data)
-  proposalApi.createProposal()
+  proposalApi.createProposal(data)
     .then(proposalUi.createProposalSuccess)
     .catch(proposalUi.failure)
 }

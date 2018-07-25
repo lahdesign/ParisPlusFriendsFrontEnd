@@ -1,14 +1,14 @@
 const config = require('../config')
 const store = require('../store')
 
-const createProposal = function () {
+const createProposal = function (data) {
   return $.ajax({
     url: config.apiUrl + '/proposals/',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: {}
+    data
 
   })
 }
@@ -16,7 +16,7 @@ const createProposal = function () {
 const updateProposal = function () {
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/proposal/' + store.game.id,
+    url: config.apiUrl + '/proposals/' + store.game.id,
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
