@@ -7,10 +7,17 @@ const proposalUi = require('../proposal/proposalUi')
 const onCreateProposal = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('got to on create example')
-  console.log(data)
   proposalApi.createProposal(data)
     .then(proposalUi.createProposalSuccess)
+    .catch(proposalUi.failure)
+}
+
+const onUpdateProposal = (event) => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  proposalApi.updateProposal(data)
+  console.log('made it here')
+    .then(proposalUi.updateProposalSuccess)
     .catch(proposalUi.failure)
 }
 
@@ -37,6 +44,7 @@ const onDeleteProposal = (event) => {
 
 const addHandlers = () => {
 $('#build_proposal').on('submit', onCreateProposal)
+$('#update_proposal').on('submit', onUpdateProposal)
   // $('#clearBooksButton').on('click', onClearBooks)
   // $('.content').on('click', onDeleteBook )
 }

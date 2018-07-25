@@ -12,10 +12,11 @@ const store = require('../store')
 
 // const onUserMovesSuccess = function (data) {}
 
-const onCreateProposalSuccess = function (data) {
+const createProposalSuccess = function (data) {
   $('#message').text('Example successfully created')
   $('#message').css('background-color', 'green')
-  store.game = data.game
+  store.proposal = data.proposal
+  debugger
   console.log('onCreateSuccess ran. Data is :', data)
   // $('#board').show()
 }
@@ -75,7 +76,7 @@ const onCreateProposalSuccess = function (data) {
 // }
 
 module.exports = {
-  onCreateProposalSuccess
+  createProposalSuccess
 //   onCreateSuccess,
 //   onCreateFailure,
 //   onIndexSuccess,

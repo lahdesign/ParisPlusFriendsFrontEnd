@@ -14,9 +14,10 @@ const createProposal = function (data) {
 }
 
 const updateProposal = function () {
+  debugger
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/proposals/' + store.game.id,
+    url: config.apiUrl + '/proposals/' + store.proposal.id,
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
