@@ -12,23 +12,21 @@ const createProposal = function (data) {
 
   })
 }
-
-const updateProposal = function () {
-  debugger
+const showProposals = function (id) {
   return $.ajax({
+    url: config.apiOrigin + '/proposal/' + id,
+    method: 'GET'
+  })
+}
+
+const updateProposal = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/proposals/' + data.id,
     method: 'PATCH',
-    url: config.apiUrl + '/proposals/' + store.proposal.id,
     headers: {
       Authorization: 'Token token=' + store.user.token
-    }
-//     },
-//     --data '{
-//       "proposals": {
-//         "project_title": "'"${TITLE}"'",
-//         "question_one": "'"${QUESTION_ONE}"'",
-//         "question_two": "'"${QUESTION_TWO}"'",
-//         "question_three": "'"${QUESTION_THREE}"'"
-
+    },
+    data
   })
 }
 
@@ -46,5 +44,6 @@ const getProposals = function () {
 module.exports = {
   createProposal,
   updateProposal,
-  getProposals
+  getProposals,
+  showProposals
 }

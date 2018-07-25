@@ -12,13 +12,21 @@ const onCreateProposal = (event) => {
     .catch(proposalUi.failure)
 }
 
+const onShowProposals = function (event) {
+  event.preventDefault()
+  console.log('made it here')
+  proposalApi.showProposals(event)
+    .then(proposalUi.onSuccess)
+    .catch(proposalUi.onError)
+}
+
 const onUpdateProposal = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  proposalApi.updateProposal(data)
-  console.log('made it here')
-    .then(proposalUi.updateProposalSuccess)
-    .catch(proposalUi.failure)
+  console.log(data)
+  // proposalApi.updateProposal(data)
+  //   .then(proposalUi.updateProposalSuccess)
+  //   .catch(proposalUi.failure)
 }
 
 const onGetProposals = (event) => {
@@ -43,8 +51,9 @@ const onDeleteProposal = (event) => {
 }
 
 const addHandlers = () => {
-$('#build_proposal').on('submit', onCreateProposal)
-$('#update_proposal').on('submit', onUpdateProposal)
+  $('#show_proposals').on('click', onShowProposals)
+  $('#build_proposal').on('submit', onCreateProposal)
+  $('#update_proposal').on('submit', onUpdateProposal)
   // $('#clearBooksButton').on('click', onClearBooks)
   // $('.content').on('click', onDeleteBook )
 }
@@ -64,5 +73,6 @@ module.exports = {
   onCreateProposal,
   onGetProposals,
   onDeleteProposal,
-  onClearProposal
+  onClearProposal,
+  onShowProposals
 }
