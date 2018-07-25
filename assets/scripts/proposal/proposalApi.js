@@ -3,12 +3,13 @@ const store = require('../store')
 
 const createProposal = function () {
   return $.ajax({
-    url: config.apiUrl + '/proposal/',
+    url: config.apiUrl + '/proposals/',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
     data: {}
+
   })
 }
 
