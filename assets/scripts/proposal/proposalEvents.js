@@ -39,19 +39,20 @@ const onClearProposal = (event) => {
   event.preventDefault()
   proposalUi.clearProposal()
 }
-// const onDeleteProposal = (event) => {
-//   event.preventDefault()
-//   // closest is handlebar syntax
-//   const proposalId = $(event.target).closest('ul').attr('data-id')
-//   proposalApi.deleteProposal(proposalId)
-//     .then(() => onGetProposals(event))
-//     .catch(proposalUi.failure)
-// }
+const onDeleteProposal = (event) => {
+  event.preventDefault()
+  // closest is handlebar syntax
+  const proposalId = $(event.target).closest('ul').attr('data-id')
+  proposalApi.deleteProposal(proposalId)
+    .then(() => onShowProposals(event))
+    .catch(proposalUi.failure)
+}
 
 const addHandlers = () => {
   $('#show_proposals').on('click', onShowProposals)
   $('#build_proposal').on('submit', onCreateProposal)
   $('#update_proposal').on('submit', onUpdateProposal)
+  $('#delete_proposal').on('submit', onDeleteProposal)
   // $('#clearBooksButton').on('click', onClearBooks)
   // $('.content').on('click', onDeleteBook )
 }
@@ -70,7 +71,7 @@ module.exports = {
   addHandlers,
   onCreateProposal,
   // onGetProposals,
-  // onDeleteProposal,
+  onDeleteProposal,
   onClearProposal,
   onShowProposals
 }
