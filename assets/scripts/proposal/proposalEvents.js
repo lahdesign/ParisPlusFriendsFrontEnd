@@ -41,6 +41,7 @@ const onClearProposal = (event) => {
 }
 const onDeleteProposal = (event) => {
   event.preventDefault()
+  console.log('made it here')
   // closest is handlebar syntax
   const proposalId = $(event.target).closest('ul').attr('data-id')
   proposalApi.deleteProposal(proposalId)
@@ -52,7 +53,7 @@ const addHandlers = () => {
   $('#show_proposals').on('click', onShowProposals)
   $('#build_proposal').on('submit', onCreateProposal)
   $('#update_proposal').on('submit', onUpdateProposal)
-  $('#delete_proposal').on('submit', onDeleteProposal)
+  $('#delete_proposal').on('click', onDeleteProposal)
   // $('#clearBooksButton').on('click', onClearBooks)
   // $('.content').on('click', onDeleteBook )
 }

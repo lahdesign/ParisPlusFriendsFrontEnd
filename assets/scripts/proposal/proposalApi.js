@@ -32,8 +32,16 @@ const updateProposal = function (data) {
     data
   })
 }
+const deleteProposal = (event) => {
+  event.preventDefault()
+  const proposalId = $(event.target).closest('ul').attr('data-id')
+  // console.log("delete: " + boardgameId)
+  proposalApi.deleteProposal(proposalId)
+    .then(onDeleteProposalSuccess)
+}
 module.exports = {
   createProposal,
   updateProposal,
-  showProposals
+  showProposals,
+  deleteProposal
 }

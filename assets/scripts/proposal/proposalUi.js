@@ -32,6 +32,14 @@ const updateProposalSuccess = function (data) {
   store.proposal = data.proposal
   console.log('onUpdateSuccess ran. Data is :', data)
 }
+
+const deleteProposal = (event) => {
+  event.preventDefault()
+  const proposalId = $(event.target).closest('ul').attr('data-id')
+  // console.log("delete: " + boardgameId)
+  proposalApi.deleteProposal(proposalId)
+    .then(onDeleteProposalSuccess)
+}
 // const onCreateFailure = function (error) {
 //   $('#message').text('Error on creating example')
 //   $('#message').css('background-color', 'red')
@@ -89,7 +97,8 @@ const updateProposalSuccess = function (data) {
 module.exports = {
   createProposalSuccess,
   showProposalSuccess,
-  updateProposalSuccess
+  updateProposalSuccess,
+  deleteProposal
 //   onCreateSuccess,
 //   onCreateFailure,
 //   onIndexSuccess,

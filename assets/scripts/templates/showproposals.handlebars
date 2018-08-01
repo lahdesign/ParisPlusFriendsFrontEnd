@@ -4,5 +4,17 @@
 <h3>Question 2: {{proposal.question_two}}</h3>
 <h3>Question 3: {{proposal.question_three}}</h3>
 
+<ul data-id="{{proposal.id}}">
+   <li>{{#if proposal.name}}
+     {{proposal.name}}
+     {{else}}
+     No proposal
+     {{/if}}
+   </li>
+   <li><button class="delete" type="submit">DELETE</button></li>
+ </ul>
+</div>
+
 
 {{/each}}
+
