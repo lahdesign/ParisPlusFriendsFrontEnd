@@ -32,13 +32,16 @@ const updateProposal = function (data) {
     data
   })
 }
-const deleteProposal = (event) => {
-  event.preventDefault()
-  const proposalId = $(event.target).closest('ul').attr('data-id')
-  // console.log("delete: " + boardgameId)
-  proposalApi.deleteProposal(proposalId)
-    .then(onDeleteProposalSuccess)
+const deleteProposal = (proposalId) => {
+  return $.ajax({
+    url: config.apiUrl + '/proposals/' + proposalId,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
 }
+
 module.exports = {
   createProposal,
   updateProposal,

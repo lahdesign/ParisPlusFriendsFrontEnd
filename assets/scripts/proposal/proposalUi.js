@@ -2,6 +2,7 @@
 // const config = require('../config.js')
 const store = require('../store')
 const proposalTemplate = require('../templates/showproposals.handlebars')
+const proposalApi = require('./proposalApi.js')
 
 // const onGetGamesSuccess = function (data) {
 //   console.log(data)
@@ -24,6 +25,7 @@ const showProposalSuccess = function (data) {
   console.log(data)
   const htmltemplate = proposalTemplate({proposals: data.proposals})
   $('.content').append(htmltemplate)
+  $('.delete').on('click', onDeleteProposal)
 }
 
 const updateProposalSuccess = function (data) {
@@ -33,13 +35,26 @@ const updateProposalSuccess = function (data) {
   console.log('onUpdateSuccess ran. Data is :', data)
 }
 
-const deleteProposal = (event) => {
+const onDeleteProposal = (event) => {
   event.preventDefault()
   const proposalId = $(event.target).closest('ul').attr('data-id')
   // console.log("delete: " + boardgameId)
   proposalApi.deleteProposal(proposalId)
     .then(onDeleteProposalSuccess)
 }
+
+const onDeleteProposalSuccess = function() {
+  console.log('proposaldeleted')
+  // $('#message').html('Game has been Deleted')
+  // $('#message').css('background-color', 'green')
+  // $('#message').css('font-size', '20px')
+  // $('#message').css('text-align', 'center')
+  // $('#message').css('font-family', 'Gaegu')
+  // $('#message').removeClass('hidden')
+  // $('#show-game-modal').modal('hide')
+
+}
+
 // const onCreateFailure = function (error) {
 //   $('#message').text('Error on creating example')
 //   $('#message').css('background-color', 'red')
@@ -94,11 +109,12 @@ const deleteProposal = (event) => {
 //   console.error('onUpdateFailure ran. Error is :', error)
 // }
 
+
 module.exports = {
   createProposalSuccess,
   showProposalSuccess,
   updateProposalSuccess,
-  deleteProposal
+  onDeleteProposal
 //   onCreateSuccess,
 //   onCreateFailure,
 //   onIndexSuccess,
