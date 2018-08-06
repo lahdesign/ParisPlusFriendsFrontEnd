@@ -4,7 +4,11 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 body {
   width: 100%;
   height: 400px;
-  background-image: url("../styles/../../images/moon_breath_4color.gif");
+  background-image: url("../styles/../../images/background_paris.gif");
   background-repeat: no-repeat;
-  background-size: contain;
+  // background-size: contain;
+}
+img {
+  width: 100%;
+  height: auto;
 }

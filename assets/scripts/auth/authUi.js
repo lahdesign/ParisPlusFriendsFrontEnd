@@ -23,7 +23,9 @@ const onSignInSuccess = function (data) {
   // resetForms()
   setTimeout(() => $('#sign-in-message').text(''), 3000)
   store.user = data.user
-  // store.gameInstance()
+  // store.proposalInstance()
+  $('#signUp').hide()
+  $('#signIn').hide()
 }
 
 const onSignInFailure = function () {
@@ -68,6 +70,8 @@ const onSignOutSuccess = function () {
   // resetForms()
   $('#game-board').html('')
   setTimeout(() => $('#sign-out-message').text(''), 3000)
+  $('#signUp').show()
+  $('#signIn').show()
 }
 
 // const onSignOutFailure = function () {
