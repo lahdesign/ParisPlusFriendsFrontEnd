@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Example</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+
+      <body>
+
+
+      <img src="./images/Paris_plusFriendsLogo.png" alt="Paris Plus Friends Logo">
+
+      <div id = "background">
+        <p>
+
+        </p>
+
+      </div>
+
+      <div id = "info">
+          <p>
+              General info about the pop up
+            </p>
+
+      </div>
+
+      <div id = "callForProposals">
+          <p>
+              Call for Proposals
+            </p>
+      </div>
+
+      <div id = "signUp">
+        <form id="sign_up" class="border">
+          <fieldset>
+            <legend>Create User</legend>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            <input type="submit" value="Sign up!">
+          </fieldset>
+        </form>
+
+      </div>
+
+      <div id = "signIn">
+        <form id="sign_in" class="border">
+          <fieldset>
+            <legend>Sign in!</legend>
+            <input type="text" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="submit" value="Sign in!">
+          </fieldset>
+        </form>
+      </div>
+
+         <!-- Start of user info -->
+  <!-- display user info on signIn -->
+   <div id = "userInfo">
+
+    <form id="change_password" class="border">
+     <fieldset>
+       <legend>Change password</legend>
+       <input type="password" name="passwords[old]" placeholder="Old Password">
+       <input type="password" name="passwords[new]" placeholder="New Password">
+       <input type="submit" value="Change Password!">
+     </fieldset>
+   </form>
+
+   <form id="sign_out" class="border">
+       <fieldset>
+         <legend>Sign Out!</legend>
+         <input type="submit" value="Sign out!">
+       </fieldset>
+     </form>
+
+
+
+      <div id="buildProposal">
+        <form id="build_proposal" class="border">
+          <fieldset>
+            <legend>Build Proposal</legend>
+            <input type="text" name="proposal[project_title]" placeholder="Project Title">
+            <br>
+            <input type="text" name="proposal[project_title]" placeholder="Project Title">
+            <br>
+            <textarea name="proposal[question_one]" rows="5" placeholder="Question One"></textarea>
+            <br>
+            <textarea name="proposal[question_two]" rows="5" placeholder="Question Two"></textarea>
+            <br>
+            <textarea name="proposal[question_three]" rows="5" placeholder="Question Three"></textarea>
+            <br>
+            <input type="submit" value="Submit Proposal">
+          </fieldset>
+        </form>
+      </div>
+      <div class="content"></div>
+      <div id = "updateProposal">
+        <form id="update_proposal" class="border">
+          <fieldset>
+            <legend>Update Proposal</legend>
+            <input type="text" name="proposal[id]" placeholder="Proposal Id">
+            <br>
+            <input type="text" name="proposal[project_title]" placeholder="Project Title">
+            <br>
+            <textarea name="proposal[question_one]" rows="5" placeholder="Question One"></textarea>
+            <br>
+            <textarea name="proposal[question_two]" rows="5" placeholder="Question Two"></textarea>
+            <br>
+            <textarea name="proposal[question_three]" rows="5" placeholder="Question Three"></textarea>
+            <br>
+            <input type="submit" value="Update Proposal">
+          </fieldset>
+        </form>
+
+        <button id="show_proposals">Show All Proposals</button>
+
+
+      <div id = "viewProposal">
+          <p>
+              View Proposal
+            </p>
+      </div>
+
+      <div id = "myVotes">
+          <p>
+              My Votes
+            </p>
+
+      </div>
+
+      <div id = "allProposals">
+          <p>
+              All Proposals
+            </p>
+      </div>
+    </body>
+
+    </body>
+</html>
